@@ -29,6 +29,11 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
         assertEquals(10, stringCalculator.add("1,2,3,4"));
     }
+     @Test
+    void string_with_multiple_number_should_return_number_as_sum1()  {
+    	StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(5, stringCalculator.add("1\n4"));
+    }
     }
     
 

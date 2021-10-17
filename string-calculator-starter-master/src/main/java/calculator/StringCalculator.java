@@ -19,7 +19,9 @@ class StringCalculator {
 	else
 	{
 		int sum=0;
+		input=input.replaceAll("\n", ",");
 		String[] numbers = input.split(",");
+		
 		
 
 		for(int i = 0 ; i<numbers.length;i++) {
