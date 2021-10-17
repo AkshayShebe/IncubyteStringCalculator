@@ -6,7 +6,7 @@ class StringCalculator {
 	
 	public int add(String input) {
 		
-		String[] numbers = input.split(",");
+		
 		
     	if(input == null || input.isEmpty()) {
     		return 0;
@@ -15,10 +15,20 @@ class StringCalculator {
 	    else if(input.length() == 1) {
     		return Integer.parseInt(input);
     	}  
-    	else {
-    		
-    		return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
-    	}
+    	
+	else
+	{
+		int sum=0;
+		String[] numbers = input.split(",");
+		
 
-    }
-}
+		for(int i = 0 ; i<numbers.length;i++) {
+			int num = Integer.parseInt(numbers[i]);
+			sum=sum+num;
+		}
+
+		return sum;
+	}
+	}}
+	
+	
