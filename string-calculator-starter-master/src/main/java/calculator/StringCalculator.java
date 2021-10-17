@@ -1,9 +1,16 @@
 package calculator;
+import java.util.regex.*;
 
 class StringCalculator {
-
-    // The method can take up to two numbers, separated by commas, and will return their sum. 
 	
+	String getDelimiter(String input) {
+		if(Pattern.matches("//.\n.*", input)) {
+			return input.charAt(input.indexOf("//")+2)+"";
+		}
+		return ",";
+	}
+
+  
 	public int add(String input) {
 		
 		
@@ -19,10 +26,10 @@ class StringCalculator {
 	else
 	{
 		int sum=0;
-		input=input.replaceAll("\n", ",");
-		String[] numbers = input.split(",");
-		
-		
+		String delimiter = getDelimiter(input);
+		input = input.replaceAll("//.\n","");
+		input = input.replaceAll("\n",delimiter);
+		String[] numbers = input.split(delimiter);
 
 		for(int i = 0 ; i<numbers.length;i++) {
 			int num = Integer.parseInt(numbers[i]);
