@@ -44,6 +44,11 @@ class StringCalculatorShould {
          StringCalculator stringCalculator = new StringCalculator();
          assertEquals(3, stringCalculator.add("//;\n-1;-2"));
      }
+     @Test
+     void string_with_number_greater_than_1000() throws NumberFormatException, NegativeNumberNotallowedExcep {
+         StringCalculator stringCalculator = new StringCalculator();
+         assertEquals(2, stringCalculator.add("2+1001"));
+     }
     }
     
 
